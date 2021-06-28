@@ -32,7 +32,7 @@ class ArticleController extends Controller
            'title'=>'required'
 
         ]);
-        return Article::create(array_merge($request->all(), ['user_id'=>Auth::guard('api')->user()->id]));
+        return Article::create($request->all());
     }
 
     /**

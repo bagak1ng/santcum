@@ -30,7 +30,7 @@ class CommentController extends Controller
             'content'=>'required',
             'author'=>'required'
         ]);
-        return Comment::create(array_merge($request->all(), ['user_id'=>Auth::guard('api')->user()->id]));
+        return Comment::create($request->all());
     }
 
     /**
